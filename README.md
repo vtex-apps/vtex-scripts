@@ -4,16 +4,13 @@ This package contains the scripts and build configuration for the VTEX modules.
 
 ## Usage
 
-1.  Inside the [NPM Store Components repo](https://www.github.com/vtex-apps/npm-storecomponents)
-
-Just run the bellow in the terminal
+1.  Add the `@vtex/vtex-scripts` to your devDependencies
 
 ```sh
-$ lerna add @vtex/vtex-scripts --scope=your-component
-$ lerna bootstrap
+$ yarn add @vtex/vtex-scripts enzyme enzyme-adapter-react-16 jsdom --dev
 ```
 
-And add the following lines to your `package.json`
+2. Add the following scripts to your `package.json`
 
 ```json
 {
@@ -24,21 +21,7 @@ And add the following lines to your `package.json`
 }
 ```
 
-2.  In a `vtex init`'ed module
-
-Add the `@vtex/vtex-scripts` to your devDependencies
-
-```sh
-$ yarn add @vtex/vtex-scripts --dev
-```
-
-Also, **if you want testing** you need to install some required packages
-
-```
-$ yarn add enzyme enzyme-adapter-react-16 jsdom --dev
-```
-
-And add the following to a `setupTests.js` in the root of your _source_ directory
+3. Add the following to a `setupTests.js` in the root of your _source_ directory
 
 ```js
 import Enzyme from 'enzyme'
@@ -51,16 +34,6 @@ global.window = jsdom.window
 global.document = window.document
 
 Enzyme.configure({ adapter: new Adapter() })
-```
-
-Then, just add the scripts to your `package.json`
-
-```json
-{
-  "scripts": {
-    "test": "vtex-scripts test"
-  }
-}
 ```
 
 ## Configurations
