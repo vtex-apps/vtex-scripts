@@ -21,7 +21,7 @@ module.exports = (resolve, resolveAppPath) => {
     transform: {
       "\\.(gql|graphql)$": resolve('node_modules/jest-transform-graphql'),
       "^.+\\.(js|jsx|mjs)$": resolve('config/jest/babelTransform.js'),
-      "^.+\\.(ts|tsx)$": resolve('node_modules/typescript-babel-jest'),
+      "^.+\\.(ts|tsx)$": resolve('node_modules/ts-jest'),
       '^(?!.*\\.(js|jsx|mjs|css|ts|tsx|json|graphql|gql)$)': resolve(
         'config/jest/fileTransform.js'
       ),

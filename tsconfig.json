@@ -23,7 +23,7 @@
     "types": ["node", "jest", "graphql"]
   },
   "exclude": ["node_modules"],
-  "include": ["./typings/*.d.ts", "./**/*.tsx"],
+  "include": ["./typings/*.d.ts", "./**/*.tsx", "index.d.ts"],
   "typeAcquisition": {
     "enable": false
   }
